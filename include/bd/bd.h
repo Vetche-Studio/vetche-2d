@@ -1,6 +1,6 @@
 #pragma once
 
-namespace bd
-{
+namespace bd {
     void Println(const char* str);
+    void RunMain();
 }

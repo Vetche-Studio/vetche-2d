@@ -2,4 +2,5 @@
 
 int main() {
     bd::Println("Hello World");
+    bd::RunMain();
 }

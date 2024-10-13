@@ -4,11 +4,17 @@ set(PROJECT_TARGET_NAME ${PROJECT_NAME})
 
 include_directories(
     ${PROJECT_TARGET_NAME} 
-    include)
-
+    ./include
+    ./vendor/raylib/src)
+    
+set(RAYLIB_VERSION 5.0)
 set(SRC_FILES 
     src/bd/bd.cpp)
 
-add_library(${PROJECT_TARGET_NAME} SHARED
+add_subdirectory(vendor/raylib)
+
+# TODO: Make this library dynamic and fix the problem where raylib doesn't work with SHARED
+add_library(${PROJECT_TARGET_NAME} STATIC
     ${SRC_FILES})
 
+target_link_libraries(${PROJECT_TARGET_NAME} raylib)
