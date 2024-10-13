@@ -9,7 +9,10 @@ include_directories(
     
 set(RAYLIB_VERSION 5.0)
 set(SRC_FILES 
-    src/bd/bd.cpp)
+    src/bd/bd.cpp
+    src/bd/core/core.cpp
+    src/bd/layer/layerstack.cpp
+    )
 
 add_subdirectory(vendor/raylib)
 

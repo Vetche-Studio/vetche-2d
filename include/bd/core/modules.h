@@ -1,8 +1,5 @@
 #pragma once
 
-#include "bd/def/types.h"
-#include "bd/memory/smartptr.h"
-
 namespace bd {
     struct Core;
 }
