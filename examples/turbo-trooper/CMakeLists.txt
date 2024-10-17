@@ -7,11 +7,10 @@ include_directories(
     ../../src
     .)
 
-set(SRC_FILES 
-    main.cpp)
 
-add_executable(${PROJECT_TARGET_NAME} main.cpp)
-
+set(BRAINDUST_PLATFORM "PLAYDATE")
 add_subdirectory(../../ ./bin)
 
-target_link_libraries(${PROJECT_TARGET_NAME} BrainDust-Toolbox)
+
+
+add_brain_dust_toolbox_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
