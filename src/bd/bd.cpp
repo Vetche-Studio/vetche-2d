@@ -3,7 +3,6 @@
 
 
 #include "bd/bd.h"
-#define BUILD_LINUX_X11 1
 
 #ifdef BUILD_LINUX_X11
 

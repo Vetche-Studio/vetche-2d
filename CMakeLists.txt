@@ -18,6 +18,8 @@ set(LINUX_X11_SRC_FILES
     src/bd/platform/linux/rendering/renderer.cpp
 )
 
+add_compile_definitions(BUILD_LINUX_X11)
+
 add_subdirectory(vendor/raylib)
 
 # TODO: Make this library dynamic and fix the problem where raylib doesn't work with SHARED
