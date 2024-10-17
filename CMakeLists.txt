@@ -6,19 +6,12 @@ include_directories(
     ${PROJECT_TARGET_NAME} 
     ./src
     ./vendor/raylib/src)
-    
-set(RAYLIB_VERSION 5.0)
 
 set(SRC_FILES 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/bd/bd.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/bd/core/core.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/bd/layer/layerstack.cpp
 )
-
-set(LINUX_X11_SRC_FILES 
-    src/bd/platform/linux/rendering/renderer.cpp
-)
-
 
 if(BRAINDUST_PLATFORM)
     if(${BRAINDUST_PLATFORM} STREQUAL "PLAYDATE")
@@ -29,6 +22,7 @@ if(BRAINDUST_PLATFORM)
         set(CMAKE_XCODE_GENERATE_SCHEME TRUE)
 
         add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/playdate-cpp)
+
     endif()
 else()
 
@@ -45,6 +39,3 @@ function(add_brain_dust_toolbox_executable GAME_NAME GAME_SRC_FILES)
     endif()
 
 endfunction()
-
-
-
