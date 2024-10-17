@@ -7,24 +7,33 @@ include_directories(
     ./src
     ./vendor/raylib/src)
     
-set(RAYLIB_VERSION 5.0)
 set(SRC_FILES 
     src/bd/bd.cpp
     src/bd/core/core.cpp
     src/bd/layer/layerstack.cpp
-)
-
-set(LINUX_X11_SRC_FILES 
-    src/bd/platform/linux/rendering/renderer.cpp
-)
-
-add_compile_definitions(BUILD_LINUX_X11)
-
-add_subdirectory(vendor/raylib)
+    )
+    
+set(BRAINDUST_PLATFORM_LINUX_X11 TRUE)
+    
+if(BRAINDUST_PLATFORM_LINUX_X11)
+    include_directories(
+        ${PROJECT_TARGET_NAME} 
+        ./vendor/raylib/src)
+    set(LINUX_X11_SRC_FILES 
+        src/bd/platform/linux/rendering/renderer.cpp
+    )
+    
+    set(SRC_FILES ${SRC_FILES} ${LINUX_X11_SRC_FILES})
+    
+    add_compile_definitions(BUILD_LINUX_X11)
+        
+    set(RAYLIB_VERSION 5.0)
+    add_subdirectory(vendor/raylib)
+endif()
 
 # TODO: Make this library dynamic and fix the problem where raylib doesn't work with SHARED
-add_library(${PROJECT_TARGET_NAME} STATIC
-    ${SRC_FILES}
-    ${LINUX_X11_SRC_FILES})
+add_library(${PROJECT_TARGET_NAME} STATIC ${SRC_FILES})
 
-target_link_libraries(${PROJECT_TARGET_NAME} raylib)
+if(BRAINDUST_PLATFORM_LINUX_X11)
+    target_link_libraries(${PROJECT_TARGET_NAME} raylib)
+endif()
