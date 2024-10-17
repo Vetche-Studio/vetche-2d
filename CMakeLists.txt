@@ -4,8 +4,9 @@ set(PROJECT_TARGET_NAME ${PROJECT_NAME})
 
 include_directories(
     ${PROJECT_TARGET_NAME} 
-    ./src
-    ./vendor/raylib/src)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/vendor/playdate-cpp/inc)
 
 set(SRC_FILES 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/bd/bd.cpp
