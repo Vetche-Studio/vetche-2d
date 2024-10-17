@@ -12,7 +12,7 @@ set(SRC_FILES
 
 add_executable(${PROJECT_TARGET_NAME} main.cpp)
 
-set(BRAINDUST_PLATFORM "LINUX_X11")
+set(BRAINDUST_PLATFORM "NINTENDO_DS")
 
 add_subdirectory(../../ ./bin)
 
