@@ -4,7 +4,7 @@ set(PROJECT_TARGET_NAME ${PROJECT_NAME})
 
 include_directories(
     ${PROJECT_TARGET_NAME}
-    ../../include
+    ../../src
     .)
 
 set(SRC_FILES 
