@@ -13,6 +13,16 @@ void bd::RunMain() {
     core->Run();
 }
 
+#elif BUILD_NDS
+
+#include "bd/platform/nds/build/build.h"
+
+void bd::RunMain() {
+    auto core = nintendo_ds::Build();
+    core->Run();
+}
+
+
 #else
 
 void bd::RunMain() {

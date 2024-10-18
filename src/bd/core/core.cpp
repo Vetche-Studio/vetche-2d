@@ -10,10 +10,10 @@ void bd::Core::Init() {
 
 void bd::Core::Run() {
     // TODO: Abstract the windowing to a module.
-    InitWindow(800, 450, "raylib [core] example - basic window");
-    while (!WindowShouldClose())
-    {
-        Process(GetFrameTime());
-    }
-    CloseWindow();
+    // InitWindow(800, 450, "raylib [core] example - basic window");
+    // while (!WindowShouldClose())
+    // {
+    //     Process(GetFrameTime());
+    // }
+    // CloseWindow();
 }

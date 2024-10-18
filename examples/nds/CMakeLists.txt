@@ -6,7 +6,7 @@ include_directories(
     ../../src
     .)
 
-set(BRAINDUST_PLATFORM "NINTENDO_DS")
+set(BRAINDUST_PLATFORM "NDS")
 
 add_subdirectory(../../ ./bin)
 
