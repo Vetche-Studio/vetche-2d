@@ -32,16 +32,20 @@ if(BRAINDUST_PLATFORM)
         set(SRC_FILES ${SRC_FILES} ${PLAYDATE_SRC_FILES})       
          
         add_compile_definitions(CPP BUILD_PLAYDATE)
-
+        
         add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/playdate-cpp)
         add_library(${ENGINE_TARGET_NAME} STATIC ${SRC_FILES})
+        target_compile_options(${ENGINE_TARGET_NAME} PRIVATE -fPIC)
         target_link_libraries(${ENGINE_TARGET_NAME} PUBLIC pdcpp_core)
 
 
     elseif(${BRAINDUST_PLATFORM} STREQUAL "LINUX_X11")
+
         include_directories(
             ${ENGINE_TARGET_NAME} 
-            ./vendor/raylib/src)
+            ./vendor/raylib/src
+        )
+
         set(LINUX_X11_SRC_FILES 
             src/vetche/platform/raylib/rendering/renderer.cpp
             src/vetche/platform/raylib/system/runner.cpp
