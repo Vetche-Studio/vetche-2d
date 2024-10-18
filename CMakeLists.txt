@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.5.0)
 project(BrainDust-Toolbox VERSION 0.1.0 LANGUAGES C CXX)
 set(ENGINE_TARGET_NAME ${PROJECT_NAME})
 
-include(Playdate.cmake)
 
 include_directories(
     ${ENGINE_TARGET_NAME} 
@@ -25,8 +24,20 @@ if(BRAINDUST_PLATFORM)
         set(CMAKE_CONFIGURATION_TYPES "Debug;Release")
         set(CMAKE_XCODE_GENERATE_SCHEME TRUE)
 
+        set(PLAYDATE_SRC_FILES 
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/vetche/platform/pd/rendering/renderer.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/vetche/platform/pd/system/runner.cpp
+        )
+    
+        set(SRC_FILES ${SRC_FILES} ${PLAYDATE_SRC_FILES})       
+         
+        add_compile_definitions(CPP BUILD_PLAYDATE)
+
         add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/playdate-cpp)
         add_library(${ENGINE_TARGET_NAME} STATIC ${SRC_FILES})
+        target_link_libraries(${ENGINE_TARGET_NAME} PUBLIC pdcpp_core)
+
+
     elseif(${BRAINDUST_PLATFORM} STREQUAL "LINUX_X11")
         include_directories(
             ${ENGINE_TARGET_NAME} 
@@ -62,8 +73,8 @@ function(add_brain_dust_game GAME_NAME GAME_SRC_FILES)
         add_executable(${GAME_NAME} ${GAME_SRC_FILES})
         target_link_libraries(${GAME_NAME} PUBLIC BrainDust-Toolbox)
     elseif(${BRAINDUST_PLATFORM} STREQUAL "PLAYDATE")
-        add_playdate_application_modified(${GAME_NAME})
-        target_link_libraries(${GAME_NAME} PUBLIC BrainDust-Toolbox pdcpp_core)
+        add_playdate_application(${GAME_NAME})
+        target_link_libraries(${GAME_NAME} PUBLIC BrainDust-Toolbox)
         target_sources(${GAME_NAME} PUBLIC ${GAME_SRC_FILES})
     elseif(${BRAINDUST_PLATFORM} STREQUAL "NDS")
         add_executable(${GAME_NAME} ${GAME_SRC_FILES})
