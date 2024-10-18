@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/../../src",
+                "${workspaceFolder}",
+                "${env:DEVKITPRO}/libnds/include"
+            ],
+            "intelliSenseMode": "gcc-arm",
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

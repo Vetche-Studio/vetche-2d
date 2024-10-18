@@ -1,0 +1,9 @@
+{
+    "tasks": [
+        {
+            "label": "build-arm",
+            "command": "source build.sh",
+            "type": "shell"
+        }
+    ]
+}
