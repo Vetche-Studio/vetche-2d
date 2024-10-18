@@ -82,10 +82,6 @@ function(add_brain_dust_game GAME_NAME GAME_SRC_FILES)
         nds_create_rom(${GAME_NAME})
         target_compile_options(${GAME_NAME} PRIVATE
             -g -O2 -Wall)
-        add_custom_command(TARGET ${GAME_NAME} POST_BUILD
-            COMMAND ${CMAKE_OBJCOPY} -O binary ${GAME_NAME}.elf ${GAME_NAME}.nds
-            COMMENT "Converting ELF to NDS")
-        # target_link_libraries(${GAME_NAME} nds)
     else()
         message("BRAINDUST: Error on add game: platform not supported " ${BRAINDUST_PLATFORM})
     endif()
