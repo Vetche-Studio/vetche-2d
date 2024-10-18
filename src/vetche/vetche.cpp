@@ -1,14 +1,14 @@
 
 #include <iostream>
 
-
 #include "vetche/vetche.h"
 
 #ifdef BUILD_LINUX_X11
 
 #include "vetche/platform/raylib/build/build.h"
 
-void vtc::RunMain() {
+void vtc::RunMain()
+{
     auto core = rl::Build();
     core->Run();
 }
@@ -17,7 +17,8 @@ void vtc::RunMain() {
 
 #include "vetche/platform/pd/build/build.h"
 
-void vtc::RunMain() {
+void vtc::RunMain()
+{
     auto core = pd::Build();
     core->Run();
 }
@@ -33,7 +34,8 @@ void vtc::RunMain() {
 
 #else
 
-void vtc::RunMain() {
+void vtc::RunMain()
+{
     // TODO: Add edge-case.
 }
 

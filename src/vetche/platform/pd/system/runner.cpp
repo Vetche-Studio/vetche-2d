@@ -1,11 +1,10 @@
-#include <raylib.h>
 #include "runner.h"
 
-void vtc::pd::PDRunner::Init(vtc::Core& core) {
+void vtc::pd::PDRunner::Init(Core& core) {
 }
 
 bool vtc::pd::PDRunner::IsRunning() {
-    return !WindowShouldClose();
+    return true;
 }
 
 void vtc::pd::PDRunner::SetPaused(bool flag) {
@@ -13,5 +12,5 @@ void vtc::pd::PDRunner::SetPaused(bool flag) {
 }
 
 vtc::Float32 vtc::pd::PDRunner::GetDelta() {
-    return GetFrameTime();
+    return 1.0f;
 }
