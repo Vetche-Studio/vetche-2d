@@ -1,5 +1,5 @@
-#include "bd/bd.h"
+#include "vetche/vetche.h"
 
 int main() {
-    bd::RunMain();
+    vtc::RunMain();
 }

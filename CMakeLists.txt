@@ -11,9 +11,9 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/playdate-cpp/inc)
 
 set(SRC_FILES 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/bd/bd.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/bd/core/core.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/bd/layer/layerstack.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/vetche/vetche.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/vetche/core/core.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/vetche/layer/layerstack.cpp
 )
 
 if(BRAINDUST_PLATFORM)
@@ -32,8 +32,8 @@ if(BRAINDUST_PLATFORM)
             ${ENGINE_TARGET_NAME} 
             ./vendor/raylib/src)
         set(LINUX_X11_SRC_FILES 
-            src/bd/platform/raylib/rendering/renderer.cpp
-            src/bd/platform/raylib/system/runner.cpp
+            src/vetche/platform/raylib/rendering/renderer.cpp
+            src/vetche/platform/raylib/system/runner.cpp
         )
         
         set(SRC_FILES ${SRC_FILES} ${LINUX_X11_SRC_FILES})
