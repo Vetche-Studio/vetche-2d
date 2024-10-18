@@ -27,9 +27,8 @@ void vtc::RunMain()
 
 #include "vetche/platform/nds/build/build.h"
 
-void vtc::RunMain()
-{
-    auto core = nintendo_ds::Build();
+void vtc::RunMain() {
+    auto core = nds::Build();
     core->Run();
 }
 

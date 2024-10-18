@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "(gdb) Desmume",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/bin/melonDS",
+            "args": ["--gdb", "${workspaceRoot}/build/Turbo-Trooper.nds"],
+            "stopAtEntry": false,
+            "cwd": ".",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+        }
+    ]
+}
