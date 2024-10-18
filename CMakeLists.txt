@@ -32,7 +32,8 @@ if(BRAINDUST_PLATFORM)
             ${ENGINE_TARGET_NAME} 
             ./vendor/raylib/src)
         set(LINUX_X11_SRC_FILES 
-            src/bd/platform/linux/rendering/renderer.cpp
+            src/bd/platform/raylib/rendering/renderer.cpp
+            src/bd/platform/raylib/system/runner.cpp
         )
         
         set(SRC_FILES ${SRC_FILES} ${LINUX_X11_SRC_FILES})

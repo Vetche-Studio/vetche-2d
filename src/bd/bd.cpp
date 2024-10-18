@@ -6,10 +6,10 @@
 
 #ifdef BUILD_LINUX_X11
 
-#include "bd/platform/linux/build/build.h"
+#include "bd/platform/raylib/build/build.h"
 
 void bd::RunMain() {
-    auto core = linux_x11::Build();
+    auto core = rl::Build();
     core->Run();
 }
 
