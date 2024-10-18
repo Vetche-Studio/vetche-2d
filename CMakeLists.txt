@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.5.0)
 project(BrainDust-Toolbox VERSION 0.1.0 LANGUAGES C CXX)
 set(ENGINE_TARGET_NAME ${PROJECT_NAME})
 
-include(Playdate.cmake)
 
 include_directories(
     ${ENGINE_TARGET_NAME} 
@@ -26,12 +25,12 @@ if(BRAINDUST_PLATFORM)
         set(CMAKE_XCODE_GENERATE_SCHEME TRUE)
 
         set(PLAYDATE_SRC_FILES 
-            src/vetche/platform/pd/rendering/renderer.cpp
-            src/vetche/platform/pd/system/runner.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/vetche/platform/pd/rendering/renderer.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/vetche/platform/pd/system/runner.cpp
         )
     
-        set(SRC_FILES ${SRC_FILES} ${PLAYDATE_SRC_FILES})
-
+        set(SRC_FILES ${SRC_FILES} ${PLAYDATE_SRC_FILES})       
+         
         add_compile_definitions(CPP BUILD_PLAYDATE)
 
         add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/playdate-cpp)

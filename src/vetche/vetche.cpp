@@ -13,6 +13,15 @@ void vtc::RunMain() {
     core->Run();
 }
 
+#elif BUILD_PLAYDATE
+
+#include "vetche/platform/pd/build/build.h"
+
+void vtc::RunMain() {
+    auto core = pd::Build();
+    core->Run();
+}
+
 #elif BUILD_NDS
 
 #include "vetche/platform/nds/build/build.h"
