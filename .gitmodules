@@ -1,6 +1,0 @@
-[submodule "vendor/raylib"]
-	path = vendor/raylib
-	url = git@github.com:raysan5/raylib.git
-[submodule "vendor/playdate-cpp"]
-	path = vendor/playdate-cpp
-	url = https://github.com/nstbayless/playdate-cpp
