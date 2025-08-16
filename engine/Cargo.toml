@@ -5,3 +5,7 @@ edition = "2024"
 
 [dependencies]
 pyo3 = "0.25.1"
+
+[features]
+# instead extension-module feature for pyo3 is enabled conditionally when we want to build a standalone extension module to test our plugins without "main" program
+extension-module = ["pyo3/extension-module"]
