@@ -1,9 +1,7 @@
 [package]
-name = "vetche-2d"
+name = "engine"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-engine = {path="engine"}
 pyo3 = "0.25.1"
-raylib = "5.5.1"
