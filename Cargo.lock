@@ -94,13 +94,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "48c757948c5ede0e46177b7add2e67155f70e33c07fea8284df6576da70b3719"
 
 [[package]]
-name = "engine"
-version = "0.1.0"
-dependencies = [
- "pyo3",
-]
-
-[[package]]
 name = "glob"
 version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -412,9 +405,16 @@ checksum = "7264e107f553ccae879d21fbea1d6724ac785e8c3bfc762137959b5802826ef3"
 name = "vetche-2d"
 version = "0.1.0"
 dependencies = [
- "engine",
  "pyo3",
  "raylib",
+ "vetche_api",
+]
+
+[[package]]
+name = "vetche_api"
+version = "0.1.0"
+dependencies = [
+ "pyo3",
 ]
 
 [[package]]

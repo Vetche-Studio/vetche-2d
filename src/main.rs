@@ -11,24 +11,23 @@ fn raylib_test() {
     }
 }
 
-use engine::engine;
+use vetche_api::vetche_api;
 use pyo3::prelude::*;
 use pyo3::types::PyList;
 
-fn pyo3_test() -> Result<(), Box<dyn std::error::Error>> {
-    pyo3::append_to_inittab!(engine);
+fn pyo3_test(path: &'static str) -> Result<(), Box<dyn std::error::Error>> {
+    pyo3::append_to_inittab!(vetche_api);
     pyo3::prepare_freethreaded_python();
-    let path = "./engine_py/";
     Python::with_gil(|py| {
-        let syspath: Bound<PyList> = py.import("sys")?.getattr("path")?.extract()?;
-        syspath.insert(0, &path)?;
-        println!("Import path is: {:?}", syspath);
-        let engine_module = PyModule::import(py, "init")?;
-        let _ = engine_module.getattr("start")?.call0()?;
+        let sys_path: Bound<PyList> = py.import("sys")?.getattr("path")?.extract()?;
+        sys_path.insert(0, &path)?;
+        println!("Import path is: {:?}", sys_path);
+        let module = PyModule::import(py, "init")?;
+        let _ = module.getattr("start")?.call0()?;
         Ok(())
     })
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    pyo3_test()
+    pyo3_test("./python_script_test/")
 }

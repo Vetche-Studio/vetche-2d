@@ -19,7 +19,7 @@ impl Object {
 
 /// This defines the actual python module to be imported.
 #[pymodule]
-pub fn engine(m: &Bound<'_, PyModule>) -> PyResult<()> {
+pub fn vetche_api(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<Object>()?;
     Ok(())
 }
