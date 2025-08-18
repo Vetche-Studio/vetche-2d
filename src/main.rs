@@ -11,6 +11,15 @@ fn raylib_test() {
     }
 }
 
-fn main() {
-    raylib_test()
+use mun_runtime::Runtime;
+
+fn main() -> Result<(), Error> {
+    let lib_path = "./mun_test_project";
+    let builder = Runtime::builder(lib_path);
+    let mut runtime = unsafe { builder.finish() }.expect("Failed to spawn Runtime");
+    loop {
+        runtime.invoke("main", ());
+        unsafe { runtime.update() };
+    }
+    Ok(())
 }
