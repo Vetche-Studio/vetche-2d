@@ -1,4 +1,5 @@
 #include <raylib.h>
+#include <angelscript.h>
 
 void raylib_stuff()
 {
@@ -14,6 +15,24 @@ void raylib_stuff()
         EndDrawing();
     }
     CloseWindow();
+}
+
+using PhysicsUnit = float;
+
+struct Vec2
+{
+    PhysicsUnit X, Y;
+
+    PhysicsUnit dot()
+    {
+        return X * X + Y * Y;
+    }
+};
+
+void angelscript_stuff()
+{
+    asIScriptEngine* engine = asCreateScriptEngine(ANGELSCRIPT_VERSION);
+    asFreeMem(engine); // meh
 }
 
 int main() {
