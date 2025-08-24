@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="cs-script" Version="4.11.0" />
     <PackageReference Include="Raylib-cs" Version="7.0.1" />
   </ItemGroup>
 
