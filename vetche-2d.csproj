@@ -9,8 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="cs-script" Version="4.11.0" />
-    <PackageReference Include="pythonnet" Version="3.0.5" />
+    <PackageReference Include="ironpython" Version="3.4.2" />
     <PackageReference Include="Raylib-cs" Version="7.0.1" />
   </ItemGroup>
 
